@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combined WebServer and Circles Animation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,800;1,400&family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page1">
+      <div class="header">
+        <i><span>WebServer</span></i>
+        <br /><span id="shead">Request Handling</span>
+      </div>
+      <hr id="tophr" />
+      <div class="rr">
+        <span id="head">Round Robin <br /></span>
+
+        <span id="par">
+          <i>
+            Easy to implement and conceptualize, <br />
+            round robin is the most widely deployed load balancing algorithm.<br />
+            Using this method, <br />
+            client requests are routed to available servers on a cyclical
+            basis.</i
+          ></span
+        >
+      </div>
+      <div id="btnpr"><button class="btn" onclick="scrool()">Scroll Down</button></div>
+    </div>
+
+    <div class="page2">
+      <span id="p2head">Process Execution</span>
+
+      <div class="flexbox">
+        <div id="circleA" class="circle"><span id="text">Process A</span> </div>
+        <div id="circleB" class="circle"><span id="text">Process B</span></div>
+        <div id="circleC" class="circle"><span id="text">Process C</span></div>
+        <div id="circleD" class="circle"><span id="text">Process D</span></div>
+      </div>
+      <button class="btn" id="run">Execute</button>
+      <div class="wrapper">
+        <!-- <div class="modal">
+          <span class="emoji">👏</span> 
+          <span class="emoji round">🏆</span>
+          <h1>Congratulation, Ahmed</h1>
+          <a href="#" class="modal-btn">Celebrate</a>
+        </div> -->
+        <div id="confetti-wrapper">
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

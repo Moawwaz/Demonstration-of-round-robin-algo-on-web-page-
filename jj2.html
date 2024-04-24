@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Circles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            display: inline-block;
+            margin: 5px;
+            background-color: #f1f1f1;
+            transition: background-color 2s;
+        }
+
+        /* Define the basic styles for the circles */
+        #circleA { background-color: #f1f1f1; }
+        #circleB { background-color: #f1f1f1; }
+        #circleC { background-color: #f1f1f1; }
+        #circleD { background-color: #f1f1f1; }
+
+        /* Keyframes for the glow effect - Circles */
+        @keyframes glowA {
+            0%, 100% { background-color: #f1f1f1; }
+            20% { background-color: #FF0000; } /* Circle A */
+        }
+
+        @keyframes glowB {
+            0%, 100% { background-color: #f1f1f1; }
+            40% { background-color: #00FF00; } /* Circle B */
+        }
+
+        @keyframes glowC {
+            0%, 100% { background-color: #f1f1f1; }
+            60% { background-color: #0000FF; } /* Circle C */
+        }
+
+        @keyframes glowD {
+            0%, 100% { background-color: #f1f1f1; }
+            80% { background-color: #FFFF00; } /* Circle D */
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="circleA" class="circle">Process A</div>
+    <div id="circleB" class="circle">Process B</div>
+    <div id="circleC" class="circle">Process C</div>
+    <div id="circleD" class="circle">Process D</div>
+    <button id="run">click</button>
+
+    <script>
+        const v = document.getElementById('run')
+        v.addEventListener("click", function () {
+            const sequence = ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'A', 'C', 'A'];
+
+            function animateCircle(index) {
+                const currentCircle = sequence[index];
+                const currentElement = document.getElementById(`circle${currentCircle}`);
+
+                currentElement.style.animation = `glow${currentCircle} 1s forwards`;
+
+                if (index < sequence.length - 1) {
+                    setTimeout(() => {
+                        currentElement.style.animation = '';
+                        animateCircle(index + 1);
+                    }, 1000);
+                }
+            }
+
+            animateCircle(0);
+        });
+    </script>
+</body>
+</html>
